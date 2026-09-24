@@ -60,26 +60,38 @@
       suffixElement.textContent = suffix;
       element.appendChild(suffixElement);
     }
+    // Commit the initial zero position before starting the rail transition.
+    element.offsetWidth;
     window.requestAnimationFrame(function () {
       element.classList.add("is-rolling");
     });
   }
 
+  function startStats() {
+    if (stats.dataset.rollingStarted === "true") return;
+    stats.dataset.rollingStarted = "true";
+    statValues.forEach(animateStat);
+  }
+
   if (statValues.length && !reduceMotion && "IntersectionObserver" in window) {
-    var statsObserver = new IntersectionObserver(
-      function (entries) {
-        if (!entries[0].isIntersecting) return;
-        statValues.forEach(animateStat);
-        statsObserver.unobserve(stats);
-      },
-      { threshold: 0.35 },
-    );
-    statsObserver.observe(stats);
+    if (stats.getBoundingClientRect().top < window.innerHeight) {
+      window.setTimeout(startStats, 250);
+    } else {
+      var statsObserver = new IntersectionObserver(
+        function (entries) {
+          if (!entries[0].isIntersecting) return;
+          startStats();
+          statsObserver.unobserve(stats);
+        },
+        { threshold: 0.35 },
+      );
+      statsObserver.observe(stats);
+    }
   }
 
   // Reveal major content sections with one lightweight observer.
   var revealItems = Array.prototype.slice.call(
-    document.querySelectorAll("main > section"),
+    document.querySelectorAll("main > section:not(.stats-section)"),
   );
   if (revealItems.length && !reduceMotion && "IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(

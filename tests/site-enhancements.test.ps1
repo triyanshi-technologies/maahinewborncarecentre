@@ -50,7 +50,9 @@ Assert-Contains $css 'width: 210px;' 'The navigation logo should use the approve
 Assert-Contains $script 'content.style.height' 'FAQ transitions should use one explicit height animation.'
 Assert-Contains $script 'window.matchMedia' 'FAQ controls must close immediately when reduced motion is requested.'
 Assert-Contains $script 'IntersectionObserver' 'Stats should begin counting only when visible.'
-Assert-Contains $script 'main > section' 'Major site sections should use the shared reveal observer.'
+Assert-Contains $script 'element.offsetWidth;' 'Digit reels should establish their initial position before rolling.'
+Assert-Contains $script 'stats.getBoundingClientRect().top < window.innerHeight' 'Above-fold stats should begin rolling without waiting for an intersection threshold.'
+Assert-Contains $script 'main > section:not(.stats-section)' 'The above-fold stats strip should not be hidden by the shared reveal observer.'
 Assert-Contains $script 'revealObserver' 'Site reveals should share one observer.'
 Assert-Contains $script 'stat-digit' 'Stats should use individual rolling digit reels.'
 
