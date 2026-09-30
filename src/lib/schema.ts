@@ -33,7 +33,8 @@ export function medicalClinicSchema() {
     },
     openingHours: "Mo-Su 00:00-23:59",
     areaServed: siteConfig.areaServed,
-    sameAs: [siteConfig.social.facebook],
+    // Only published profiles; placeholders such as "#" are skipped.
+    sameAs: Object.values(siteConfig.social).filter((url) => url.startsWith("http")),
   };
 }
 

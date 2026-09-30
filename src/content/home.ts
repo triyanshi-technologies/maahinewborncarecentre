@@ -3,7 +3,7 @@ export type Stat = { label: string; value: number; suffix?: string };
 export const keyStats: Stat[] = [
   { label: "Serving newborns since", value: 2015 },
   { label: "Level III NICU beds", value: 42 },
-  { label: "Full-time neonatologists", value: 4 },
+  { label: "Full-time neonatologists", value: 5 },
   { label: "Neonatologist availability", value: 24, suffix: "×7" },
   { label: "Neonatal ambulances", value: 3 },
 ];
@@ -18,7 +18,7 @@ export const outcomes: Outcome[] = [
 ];
 
 export const aboutHighlights = [
-  "Four full-time, fellowship-trained neonatologists",
+  "Five full-time, fellowship-trained neonatologists",
   "First centre in the region to offer inhaled nitric oxide",
   "Whole-body cooling, high-frequency and conventional ventilation",
   "Active academic and training programmes for newborn care",

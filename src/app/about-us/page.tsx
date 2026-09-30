@@ -19,7 +19,7 @@ const values: { icon: IconName; title: string; text: string }[] = [
   {
     icon: "clock",
     title: "Expert care, round the clock",
-    text: "Four neonatologists share 24 × 7 × 365 cover, so a specialist is always at the bedside.",
+    text: "Five neonatologists share 24 × 7 × 365 cover, so a specialist is always at the bedside.",
   },
   {
     icon: "cross",
@@ -61,7 +61,7 @@ export default function AboutPage() {
               equipped with every major life-support technology a sick or premature baby may need.
             </p>
             <p>
-              Our centre is led by four full-time neonatologists - each fellowship-trained in
+              Our centre is led by five full-time neonatologists - each fellowship-trained in
               neonatology - who are available 24 × 7 × 365. Together they have cared for babies
               weighing as little as 500 grams.
             </p>

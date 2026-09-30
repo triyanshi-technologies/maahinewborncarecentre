@@ -39,7 +39,7 @@ export const services: Service[] = [
     schemaName: "Level III NICU in Rajkot",
     image: { src: "/images/nicu-image.jpg", alt: "Level III NICU with incubators" },
     heading: "A 42-bed Level III nursery for critically ill newborns",
-    lead: "MAAHI provides a spacious 42-bed Level III nursery where four full-time neonatologists are available 24 × 7 × 365. Every major life-support therapy is available in-house, so your baby never needs to be moved for advanced care.",
+    lead: "MAAHI provides a spacious 42-bed Level III nursery where five full-time neonatologists are available 24 × 7 × 365. Every major life-support therapy is available in-house, so your baby never needs to be moved for advanced care.",
     features: [
       "Care for extremely premature and ELBW babies",
       "High-frequency and conventional ventilation",

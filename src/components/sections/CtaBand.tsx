@@ -15,7 +15,7 @@ export function CtaBand() {
               Expert newborn care, from the very first hour
             </Heading>
             <p className="text-lg text-on-pink">
-              Four full-time neonatologists, a 42-bed Level III NICU and NICU on Wheels transport -
+              Five full-time neonatologists, a 42-bed Level III NICU and NICU on Wheels transport -
               ready for your baby 24×7×365.
             </p>
           </div>

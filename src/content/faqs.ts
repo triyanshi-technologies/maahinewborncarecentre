@@ -9,7 +9,7 @@ export const faqs: Faq[] = [
   {
     question: "Is a neonatologist available 24×7 at MAAHI?",
     answer:
-      "Yes. MAAHI is run by a team of four full-time neonatologists who are available 24 × 7 × 365, including for emergencies and transfers.",
+      "Yes. MAAHI is run by a team of five full-time neonatologists who are available 24 × 7 × 365, including for emergencies and transfers.",
   },
   {
     question: "Can you transfer my baby from another hospital?",

@@ -54,6 +54,8 @@
   --breakpoint-sm: 40.0625rem;
   --breakpoint-md: 60.0625rem;
   --breakpoint-lg: 68.8125rem;
+  /* Wide desktop: enough side margin for elements that overhang the 1280px container. */
+  --breakpoint-xl: 82.5rem;
 }
 
 @utility container {

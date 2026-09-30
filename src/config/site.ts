@@ -4,7 +4,7 @@ export const siteConfig = {
   legalName: "Medical Academy and Advanced Healthcare Institute",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.maahinewborncarecentre.com",
   description:
-    "Rajkot's first exclusive neonatal centre since 2015: 42-bed Level III NICU, 4 neonatologists 24x7 and NICU on Wheels across Saurashtra & Kutch.",
+    "Rajkot's first exclusive neonatal centre since 2015: 42-bed Level III NICU, 5 neonatologists 24x7 and NICU on Wheels across Saurashtra & Kutch.",
   ogImage: "/images/hero-mother-newborn.jpg",
   foundingYear: 2015,
   themeColor: "#123F6E",
@@ -25,8 +25,11 @@ export const siteConfig = {
     short: "Pandit Dindayal Upadhyay Marg, Rajkot",
   },
   areaServed: ["Rajkot", "Saurashtra", "Kutch"],
+  // TODO: replace the "#" placeholders with the Instagram and LinkedIn profile URLs.
   social: {
     facebook: "https://www.facebook.com/maahinicu/",
+    instagram: "#",
+    linkedin: "#",
   },
   directionsUrl: "https://maps.google.com/?q=MAAHI+Newborn+Care+Centre+Rajkot",
   mapEmbedUrl:

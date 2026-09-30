@@ -2,10 +2,16 @@ import Link from "next/link";
 import { footerQuickLinks } from "@/config/navigation";
 import { mailtoHref, siteConfig } from "@/config/site";
 import { services } from "@/content/services";
-import { Icon } from "@/components/ui/Icon";
+import { Icon, type IconName } from "@/components/ui/Icon";
 import { FooterLinkGroup } from "./FooterLinkGroup";
 
 const linkClass = "text-on-dark no-underline hover:text-white";
+
+const socialLinks: { label: string; icon: IconName; href: string }[] = [
+  { label: "Facebook", icon: "facebook", href: siteConfig.social.facebook },
+  { label: "Instagram", icon: "instagram", href: siteConfig.social.instagram },
+  { label: "LinkedIn", icon: "linkedin", href: siteConfig.social.linkedin },
+];
 
 export function SiteFooter() {
   const { address } = siteConfig;
@@ -35,15 +41,25 @@ export function SiteFooter() {
               {siteConfig.legalName} - Rajkot&apos;s exclusive Level III neonatal centre serving
               Saurashtra and Kutch since {siteConfig.foundingYear}.
             </p>
-            <a
-              href={siteConfig.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="MAAHI on Facebook"
-              className="flex size-11 items-center justify-center rounded-full border border-white/30 text-white hover:text-white"
-            >
-              <Icon name="facebook" size={18} />
-            </a>
+            <ul className="flex gap-3">
+              {socialLinks.map(({ label, icon, href }) => {
+                // Placeholder links ("#") stay in the same tab.
+                const external = href.startsWith("http");
+                return (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      aria-label={`MAAHI on ${label}`}
+                      className="flex size-11 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10 hover:text-white"
+                    >
+                      <Icon name={icon} size={18} />
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
 
           <FooterLinkGroup title="Quick links" links={footerQuickLinks} linkClassName={linkClass} />

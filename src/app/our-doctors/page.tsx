@@ -20,7 +20,7 @@ export default function OurDoctorsPage() {
       <JsonLd data={doctors.map(physicianSchema)} />
       <PageHero
         title="Meet the MAAHI family"
-        description="Four full-time, fellowship-trained neonatologists - available 24 × 7 × 365 for Rajkot's newborns."
+        description="Five full-time, fellowship-trained neonatologists - available 24 × 7 × 365 for Rajkot's newborns."
         breadcrumbs={[{ label: "Our Doctors" }]}
         image={{ src: "/images/team-2.jpg", alt: "Team MAAHI group photo" }}
       />
