@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Stat } from "@/content/home";
-import { cn } from "@/lib/cn";
 
 const DIGIT_HEIGHT_EM = 1.12;
 /** Each reel holds 0-9 three times so every digit spins through at least two full cycles. */
@@ -76,18 +75,17 @@ export function StatsStrip({ stats }: { stats: Stat[] }) {
   }, [phase]);
 
   return (
+    // One row that stretches to fill wide screens and scrolls sideways when the items don't fit.
+    // Focusable so keyboard users can scroll it too.
     <dl
       ref={listRef}
-      className="grid grid-cols-2 rounded-lg border border-line bg-white sm:grid-cols-3 lg:grid-cols-5"
+      tabIndex={0}
+      className="grid snap-x snap-mandatory scrollbar-none auto-cols-[minmax(10rem,1fr)] grid-flow-col overflow-x-auto overscroll-x-contain rounded-lg border border-line bg-white [&::-webkit-scrollbar]:hidden"
     >
       {stats.map(({ label, value, suffix = "" }) => (
         <div
           key={label}
-          className={cn(
-            "flex flex-col gap-1.5 border-line p-5.5 sm:px-7 sm:py-8",
-            "max-sm:nth-[n+3]:border-t",
-            "sm:not-first:border-l sm:max-lg:nth-4:border-l-0 sm:max-lg:nth-[n+4]:border-t",
-          )}
+          className="flex snap-start flex-col gap-1.5 border-line p-5.5 not-first:border-l sm:px-7 sm:py-8"
         >
           <dt className="order-2 text-md text-muted">{label}</dt>
           <dd

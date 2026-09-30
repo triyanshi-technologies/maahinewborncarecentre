@@ -8,10 +8,21 @@ function TopBar() {
   return (
     <div className="bg-navy-dark text-sm text-white">
       <div className="container flex min-h-11 items-center justify-between gap-4">
-        <p className="flex flex-wrap items-center gap-2.5 max-sm:py-2 max-sm:text-xs">
-          <span className="rounded-full bg-pink px-2.5 py-0.75 text-2xs font-bold">24×7</span>
-          Neonatal Emergency &amp; NICU on Wheels:
-          <a href={siteConfig.phone.href} className="font-bold text-white no-underline">
+        {/* Phones: one line with a short label and the number as a call pill on the right. */}
+        <p className="flex min-w-0 items-center gap-2.5 max-sm:flex-1 max-sm:justify-between max-sm:text-xs">
+          <span className="flex min-w-0 items-center gap-2.5">
+            <span className="shrink-0 rounded-full bg-pink px-2.5 py-0.75 text-2xs font-bold">
+              24x7
+            </span>
+            {/* Very small screens show only the badge and the call pill. */}
+            <span className="truncate max-[23rem]:hidden sm:hidden">Neonatal emergency</span>
+            <span className="max-sm:hidden">Neonatal Emergency &amp; NICU on Wheels:</span>
+          </span>
+          <a
+            href={siteConfig.phone.href}
+            className="inline-flex shrink-0 items-center gap-1.5 font-bold text-white no-underline hover:text-white max-sm:rounded-full max-sm:bg-white/10 max-sm:px-3 max-sm:py-1.5 max-sm:hover:no-underline"
+          >
+            <Icon name="phone" size={14} className="sm:hidden" />
             {siteConfig.phone.display}
           </a>
         </p>

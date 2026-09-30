@@ -3,31 +3,9 @@ import { footerQuickLinks } from "@/config/navigation";
 import { mailtoHref, siteConfig } from "@/config/site";
 import { services } from "@/content/services";
 import { Icon } from "@/components/ui/Icon";
+import { FooterLinkGroup } from "./FooterLinkGroup";
 
 const linkClass = "text-on-dark no-underline hover:text-white";
-
-function FooterColumn({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string }[];
-}) {
-  return (
-    <div>
-      <h2 className="mb-3.5 text-lg text-white">{title}</h2>
-      <ul className="flex flex-col gap-3">
-        {links.map(({ label, href }) => (
-          <li key={href}>
-            <Link href={href} className={linkClass}>
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
 
 export function SiteFooter() {
   const { address } = siteConfig;
@@ -39,8 +17,8 @@ export function SiteFooter() {
   return (
     <footer className="bg-navy-dark pt-18 pb-8 text-md text-on-dark">
       <div className="container">
-        <div className="grid gap-10 pb-12 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
-          <div className="flex flex-col items-start gap-4.5 sm:col-span-2 md:col-span-1">
+        <div className="grid gap-10 pb-12 max-sm:gap-y-0 sm:grid-cols-2 md:grid-cols-[2fr_1fr_1fr_1fr]">
+          <div className="flex flex-col items-start gap-4.5 max-sm:pb-8 sm:col-span-2 md:col-span-1">
             <Link
               href="/"
               aria-label={`${siteConfig.shortName} home`}
@@ -68,10 +46,10 @@ export function SiteFooter() {
             </a>
           </div>
 
-          <FooterColumn title="Quick links" links={footerQuickLinks} />
-          <FooterColumn title="Services" links={serviceLinks} />
+          <FooterLinkGroup title="Quick links" links={footerQuickLinks} linkClassName={linkClass} />
+          <FooterLinkGroup title="Services" links={serviceLinks} linkClassName={linkClass} />
 
-          <div>
+          <div className="max-sm:border-t max-sm:border-white/15 max-sm:pt-5">
             <h2 className="mb-3.5 text-lg text-white">Reach us</h2>
             <address className="flex flex-col gap-3 leading-[1.6] not-italic">
               <p>

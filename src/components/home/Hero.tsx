@@ -45,7 +45,7 @@ export function Hero() {
       <div className="container grid items-center gap-14 md:grid-cols-2">
         <div className="flex flex-col gap-6.5">
           <Eyebrow>Rajkot&apos;s exclusive neonatal centre</Eyebrow>
-          <h1 className="text-display-xl leading-[1.04] tracking-[-0.025em]">
+          <h1 className="text-display-xl leading-[1.04] tracking-tight">
             Advanced Level III NICU &amp; <span className="text-pink">newborn care</span> in Rajkot
           </h1>
           <p className="text-xl text-muted">
@@ -60,7 +60,7 @@ export function Hero() {
             </ButtonLink>
             <ButtonLink href={siteConfig.phone.href} variant="outline">
               <Icon name="phone" size={18} />
-              Call 24×7 emergency
+              Call 24x7 emergency
             </ButtonLink>
           </div>
           <CareTeam />
@@ -80,7 +80,7 @@ export function Hero() {
               <span className="text-sm text-muted">42 beds, state-of-the-art</span>
             </div>
           </div>
-          <div className="absolute top-3 right-3 z-2 flex items-center gap-3.5 rounded-md bg-navy px-5.5 py-4.5 text-white max-sm:px-3.5 max-sm:py-3 sm:top-8 sm:right-7">
+          <div className="absolute top-3 right-3 z-2 flex items-center gap-3.5 rounded-md bg-navy px-5.5 py-4.5 text-white shadow-[0_18px_40px_rgba(18,63,110,0.14)] max-sm:px-3.5 max-sm:py-3 sm:top-8 sm:right-7 md:-right-9">
             <Icon name="ambulance" size={26} />
             <div>
               <strong className="block text-base">NICU on Wheels</strong>
