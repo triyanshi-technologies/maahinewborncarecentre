@@ -1,0 +1,100 @@
+@import "tailwindcss" source("..");
+
+@theme {
+  /* Brand palette */
+  --color-navy: #123f6e;
+  --color-navy-dark: #0b2a4a;
+  --color-navy-soft: #1d5288;
+  --color-pink: #c23a6b;
+  --color-pink-dark: #a52e59;
+  --color-pink-tint: #fbe8ef;
+  --color-sky: #e7f1fa;
+  --color-sky-strong: #cfe2f3;
+  --color-ground: #f8f6f2;
+  --color-ink: #14202e;
+  --color-muted: #4a5a6b;
+  --color-line: #e3e7ec;
+  --color-error: #b42318;
+  --color-on-dark: #c9dbee;
+  --color-on-navy: #d6e4f2;
+  --color-on-pink: #fde7ef;
+
+  --font-sans: var(--font-figtree), "Segoe UI", system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-figtree), "Segoe UI", sans-serif;
+
+  /* Type scale (1rem = 16px) */
+  --text-*: initial;
+  --text-2xs: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-base: 1rem;
+  --text-body: 1.0625rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.375rem;
+  --text-3xl: 1.5rem;
+  --text-4xl: 1.625rem;
+  --text-5xl: 2rem;
+  --text-6xl: 2.5rem;
+  --text-7xl: 2.75rem;
+  --text-8xl: 3rem;
+  --text-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --text-h1: clamp(2rem, 4vw, 3rem);
+  --text-display-lg: clamp(2.25rem, 4.4vw, 3.5rem);
+  --text-display-xl: clamp(2.5rem, 5.2vw, 4.125rem);
+  --text-display-2xl: clamp(6.875rem, 16vw, 10rem);
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+
+  /* Breakpoints mirror the original desktop-first cut-offs (640 / 960 / 1100px). */
+  --breakpoint-sm: 40.0625rem;
+  --breakpoint-md: 60.0625rem;
+  --breakpoint-lg: 68.8125rem;
+}
+
+@utility container {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 40px);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth motion-reduce:scroll-auto;
+  }
+
+  body {
+    @apply bg-ground font-sans text-base leading-[1.6] text-ink antialiased sm:text-body;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display leading-[1.12] font-semibold tracking-[-0.02em];
+  }
+
+  a {
+    @apply text-navy hover:text-pink;
+  }
+
+  a:is([href^="tel:"], [href^="mailto:"]):is(:hover, :focus-visible) {
+    @apply underline decoration-2 underline-offset-[0.18em];
+  }
+
+  :focus-visible {
+    @apply rounded-md outline-3 outline-offset-3 outline-pink;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
