@@ -53,7 +53,6 @@ export const doctors: Doctor[] = [
     tags: ["Neurosonogram", "Functional echo", "NSSK trainer", "Practising since 2012"],
   },
   {
-    // ponytail: copy of Dr. Alpesh Desai's profile with the name swapped; replace photo, qualifications and bio when supplied.
     id: "dr-jatin-rajyaguru",
     name: "Dr. Jatin Rajyaguru",
     role: DIRECTOR,
