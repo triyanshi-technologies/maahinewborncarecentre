@@ -52,4 +52,14 @@ export const doctors: Doctor[] = [
     bio: "Dr. Satish Sanja graduated from the Russian Federation, completed his DCH at Bharati Vidyapeeth Deemed University, Pune, and trained in neonatology through fellowships at MOSC, Kochi, and Bharati Vidyapeeth, Pune. Practising neonatology since 2012, he is trained in screening neurosonography and functional echo, is an NSSK trainer and has treated neonates as small as 500 grams.",
     tags: ["Neurosonogram", "Functional echo", "NSSK trainer", "Practising since 2012"],
   },
+  {
+    // ponytail: copy of Dr. Alpesh Desai's profile with the name swapped; replace photo, qualifications and bio when supplied.
+    id: "dr-jatin-rajyaguru",
+    name: "Dr. Jatin Rajyaguru",
+    role: DIRECTOR,
+    qualifications: "MB, DCH (Paediatrics), CFIN, PGPN (USA), IPPN (Aus)",
+    image: "/images/dr-alpesh-desai.jpg",
+    bio: "Dr. Jatin Rajyaguru completed his MBBS at B J Medical College, Ahmedabad, his DCH at N H L Medical College, Ahmedabad, and his fellowship in neonatology at Bharati Vidyapeeth, Pune, and MOSC Medical College, Kochi. He is trained in whole-body cooling, high-frequency ventilation, TPN, CPAP, conventional ventilation, HHFNC, functional echocardiography and neurosonography.",
+    tags: ["Whole-body cooling", "High-frequency ventilation", "Functional echo", "Neurosonogram"],
+  },
 ];

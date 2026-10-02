@@ -33,7 +33,7 @@ export function DoctorTabs({ doctors }: { doctors: Doctor[] }) {
       <div
         role="tablist"
         aria-label="Our neonatologists"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
       >
         {doctors.map((doctor) => {
           const selected = doctor.id === selectedId;
@@ -54,11 +54,11 @@ export function DoctorTabs({ doctors }: { doctors: Doctor[] }) {
               <Photo
                 src={doctor.image}
                 alt={doctor.name}
-                sizes="(min-width: 1101px) 25vw, (min-width: 641px) 50vw, 100vw"
-                className="h-75 w-full"
+                sizes="(min-width: 1101px) 20vw, (min-width: 641px) 50vw, 100vw"
+                className="h-75 w-full lg:aspect-5/6 lg:h-auto"
               />
               <span className="flex flex-col gap-1.5 px-2 pb-2">
-                <strong className="font-display text-2xl font-semibold">{doctor.name}</strong>
+                <strong className="font-display text-2xl leading-[1.12] font-semibold lg:text-xl">{doctor.name}</strong>
                 <small className="text-sm leading-[1.45] text-muted">{doctor.qualifications}</small>
               </span>
             </button>

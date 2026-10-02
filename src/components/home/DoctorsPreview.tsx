@@ -19,7 +19,7 @@ export function DoctorsPreview() {
             </ButtonLink>
           }
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {doctors.map((doctor) => (
             <Link
               key={doctor.id}
@@ -29,8 +29,8 @@ export function DoctorsPreview() {
               <Photo
                 src={doctor.image}
                 alt={doctor.name}
-                sizes="(min-width: 1101px) 25vw, (min-width: 641px) 50vw, 100vw"
-                className="mb-1.5 h-70 sm:h-105"
+                sizes="(min-width: 1101px) 20vw, (min-width: 641px) 50vw, 100vw"
+                className="mb-1.5 h-70 sm:h-105 lg:aspect-2/3 lg:h-auto"
               />
               <h3 className="text-2xl">{doctor.name}</h3>
               <p className="text-sm font-bold text-pink">{doctor.role}</p>

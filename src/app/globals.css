@@ -58,6 +58,32 @@
   --breakpoint-xl: 82.5rem;
 }
 
+/* Inline so `--reveal-delay` resolves on each marker, not on :root. */
+@theme inline {
+  /* Timeline marker: muted, flares in its colour (`--dot`) with a halo, then settles. */
+  --animate-dot-ping: dot-ping 900ms ease-out var(--reveal-delay, 0ms) backwards;
+  @keyframes dot-ping {
+    0% {
+      scale: 0.75;
+      background-color: var(--color-line);
+      box-shadow: 0 0 0 1px var(--color-line);
+    }
+    35% {
+      scale: 1.6;
+      background-color: var(--dot);
+      box-shadow:
+        0 0 0 1px var(--dot),
+        0 0 0 6px color-mix(in srgb, var(--dot) 25%, transparent);
+    }
+    100% {
+      scale: 1;
+      box-shadow:
+        0 0 0 1px var(--dot),
+        0 0 0 14px transparent;
+    }
+  }
+}
+
 @utility container {
   width: 100%;
   max-width: 80rem;
